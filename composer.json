@@ -1,0 +1,19 @@
+{
+    "name": "vendor/ftw",
+    "description": "api para o site da ftw",
+    "require-dev": {
+        "phpunit/phpunit": "^11.4",
+        "doctrine/dbal": "^4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Ftw\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "lucas",
+            "email": "mrlukas2012@hotmail.com"
+        }
+    ]
+}
