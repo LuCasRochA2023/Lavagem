@@ -16,8 +16,13 @@ class Router
 
         foreach ($this->routes as $route) {
             if ($route['method'] === $requestedMethod && preg_match($route['path'], $requestedPath, $matches)) {
-                array_shift($matches);
-                return call_user_func($route['callback'], $matches[0]);
+                if (isset($matches[0])) {
+                    array_shift($matches);
+                    return call_user_func($route['callback'], ...$matches);  
+                } else {
+                    echo "404 - Parâmetro não encontrado";
+                    return;
+                }
             }
         }
         echo "404 - Página não encontrada";
